@@ -3,6 +3,8 @@ import pandas as pd
 import pydeck as pdk
 import os
 os.environ["MAPBOX_API_KEY"] = "pk.eyJ1IjoiZ2hhemFhemhhciIsImEiOiJjbWsxbDdscHYwNWY3M2ZxNDF6c3UwanBvIn0.PrlIC3jEd60VnD3wTgIKBw"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DEFAULT = os.path.join(BASE_DIR, "data_sig_cluster_optimal.csv")
 
 # PAGE CONFIG
 st.set_page_config(
@@ -63,10 +65,6 @@ if st.session_state.admin_logged_in:
         df = pd.read_csv(DATA_DEFAULT)
 else:
     df = pd.read_csv(DATA_DEFAULT)
-
-#LOAD DATA
-DATA_DEFAULT = "/data_sig_cluster_optimal.csv"
-df = pd.read_csv(DATA_DEFAULT)
 
 df["cluster"] = df["cluster"].astype(int)
 
