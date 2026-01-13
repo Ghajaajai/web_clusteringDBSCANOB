@@ -42,7 +42,7 @@ else:
         st.rerun()
 
 #DATA UPLOAD
-DATA_DEFAULT = "hasil/data_sig_cluster_optimal.csv"
+DATA_DEFAULT = "/data_sig_cluster_optimal.csv"
 
 if st.session_state.admin_logged_in:
     st.sidebar.markdown("---")
